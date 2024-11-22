@@ -14,11 +14,11 @@ $uri = parse_url($requestUri, PHP_URL_PATH);
 $endUri = str_replace('/revision-toDo/todolist/public', '', $uri);
 $endUri = trim($endUri, '/');
 
-
 // en fonction de la valeur de $endUri on charge le bon contrôleur
 $addTask = new TaskController();
 
 if ($endUri === "") {
-$addTask->createTask();
-
+    $addTask->toTheIndexPage();
+} else if ($endUri === "add-task") {
+    $addTask->createTask();
 }

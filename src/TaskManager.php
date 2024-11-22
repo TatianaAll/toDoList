@@ -36,7 +36,7 @@ class TaskManager
                 $tasks = [];
             }
             // Ajouter un ID a mes task
-            $task['id'] = count($tasks) + 1;  // Assigner un ID unique
+            $task->id = count($tasks) + 1;  // Assigner un ID unique
             $tasks[] = $task;
 
             return $tasks;

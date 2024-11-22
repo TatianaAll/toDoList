@@ -6,7 +6,7 @@ require_once '../config/config.php';
 class Task {
     public string $name;
     public string $statut;
-    private ?int $id;
+    public ?int $id;
 
     public function __construct(string $taskName){
         if (mb_strlen($taskName) < 2) {
