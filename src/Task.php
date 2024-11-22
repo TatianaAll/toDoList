@@ -1,11 +1,12 @@
 <?php
 //pour le typage :
 declare(strict_types=1);
+require_once '../config/config.php';
 
 class Task {
     public string $name;
     public string $statut;
-    private integer $id;
+    private ?int $id;
 
     public function __construct(string $taskName){
         if (mb_strlen($taskName) < 2) {
@@ -13,13 +14,9 @@ class Task {
         }
         $this->name = $taskName;
         $this->statut = "non terminé";
-        $this->id = 1;
-//        il faut incrémenter mon ID à chaque construction
+        // il faut incrémenter mon ID à chaque construction -> depuis mon TaskManager
     }
 
-//    private function addTask(){
-//
-//    }
     private function finishTask(){
         if ($this->statut !== "finished") {
             $this->statut = "finished";

@@ -1,53 +1,5 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-<main>
-    <h2 class="text-center">Liste des tâches</h2>
-
-    <form method="POST" action="">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" name="newTaskName" placeholder="Nouvelle tache" aria-label="ajout nouvelle tache">
-
-            <div class="input-group-append">
-                <button class="btn btn-primary rounded-right" type="button" id="buttonAddTask">Ajouter</button>
-            </div>
-        </div>
-    </form>
-
-    {{ message }}
-
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Statut</th>
-            <th scope="col">Action</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-            <th scope="row">test</th>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-        </tr>
-        </tbody>
-    </table>
-</main>
-
-</body>
-</html>
 <?php
 
-echo 'Hello world';
-?>
+require_once "./../vendor/autoload.php";
+
+require_once "router.php";
