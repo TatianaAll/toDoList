@@ -57,4 +57,11 @@ class TaskController
             'tasks' => $tasks,
         ]);
     }
+
+    public function validateTask(): void {
+        // je veux sélectionner la tache en question
+        //et changer son statut
+        //
+
+    }
 }

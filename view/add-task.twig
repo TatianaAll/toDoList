@@ -45,12 +45,19 @@
         </thead>
 
         <tbody>
+
         {% if tasks is not empty %}
             {% for task in tasks %}
                 <tr>
                     <th scope="row">{{ task.id }}</th>
                     <td>{{ task.name }}</td>
-                    <td>{{ task.statut }}</td>
+                    <td>
+                        {% if task.statut is same as("non terminé") %}
+                            <span class="badge bg-warning">{{ task.statut }}</span>
+                        {% else %}
+                            <span class="badge bg-success">{{ task.statut }}</span>
+                        {% endif %}
+                    </td>
                     <td></td>
                 </tr>
             {% endfor %}
@@ -62,6 +69,7 @@
                 <td></td>
             </tr>
         {% endif %}
+
         </tbody>
     </table>
 </main>
