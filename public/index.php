@@ -14,13 +14,15 @@
 
     <form method="POST" action="">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="addTask" placeholder="Nouvelle tache" aria-label="ajout nouvelle tache">
+            <input type="text" class="form-control" name="newTaskName" placeholder="Nouvelle tache" aria-label="ajout nouvelle tache">
 
             <div class="input-group-append">
-                <button class="btn btn-primary" type="button" id="buttonAddTask">Ajouter</button>
+                <button class="btn btn-primary rounded-right" type="button" id="buttonAddTask">Ajouter</button>
             </div>
         </div>
     </form>
+
+    {{ message }}
 
     <table class="table">
         <thead class="thead-dark">
@@ -37,7 +39,7 @@
             <th scope="row">test</th>
             <td>1</td>
             <td>2</td>
-            <td>@3</td>
+            <td>3</td>
         </tr>
         </tbody>
     </table>
