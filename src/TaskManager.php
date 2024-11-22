@@ -9,9 +9,8 @@ require_once '../config/config.php';
 class TaskManager
 {
     //on type : on attend une instance de la class TASK en paramètre, et la fonction ne retourne rien :
-    public function getJsonTask()
+    public function getJsonTask($path)
     {
-        $path = '../data/tasks.json';
         $jsonString = file_get_contents($path);
         // je dit que ce que j'ai récupéré depuis mon json
         $tasks = json_decode($jsonString, true);
@@ -20,12 +19,12 @@ class TaskManager
 
     public function addJsonTask(Task $task)
     {
-        $path = '../data/task.json';
+        $path = '../data/tasks.json';
 
         try {
             if (file_exists($path)) {
 
-                $tasks = $this->getJsonTask();
+                $tasks = $this->getJsonTask($path);
 
                 //ranger mes tasks décodées dans un tableau
                 if ($tasks === null) {
@@ -38,6 +37,11 @@ class TaskManager
             // Ajouter un ID a mes task
             $task->id = count($tasks) + 1;  // Assigner un ID unique
             $tasks[] = $task;
+
+            // je convertis mon article en json
+            $jsonString = json_encode($tasks, JSON_PRETTY_PRINT);
+            // Réécrire le contenu dans le fichier JSON
+            file_put_contents($path, $jsonString);
 
             return $tasks;
         } catch (Exception $exception) {
